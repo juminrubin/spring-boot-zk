@@ -1,0 +1,40 @@
+<zk>
+	<zscript><![CDATA[ 
+	import org.apache.commons.lang3.StringUtils;
+	import org.apache.commons.lang3.ArrayUtils;
+	System.out.println("Entering login page.");
+	for (java.util.Map.Entry entry : execution.getParameterMap().entrySet()) {
+	    System.out.println("Parameter: " + entry.getKey() + " -> " + ArrayUtils.toString(entry.getValue()));
+	}
+	System.out.println("Language Locale: " + session.getAttribute(org.zkoss.web.Attributes.PREFERRED_LOCALE));
+]]></zscript>
+	<window title="${labels.login.title}" vflex="true" position="center, center" mode="modal" width="640px" apply="org.jumin.springboot.zkss.test.web.LoginController">
+		<grid>
+			<columns>
+				<column width="200px" />
+				<column />
+			</columns>
+			<rows>
+				<row>
+					<label value="${labels.login.userName}" />
+					<textbox id="userName" hflex="true" />
+				</row>
+				<row>
+					<label value="${labels.login.organizationName}" />
+					<textbox id="organizationName" hflex="true" />
+				</row>
+				<row>
+					<label value="${labels.login.password}" />
+					<textbox id="password" type="password" hflex="true" />
+				</row>
+				<row>
+					<cell colspan="2">
+						<button id="resetButton" label="${labels.login.resetButton}" />
+						<space hflex="true" />
+						<button id="loginButton" label="${labels.login.loginButton}" />
+					</cell>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>
