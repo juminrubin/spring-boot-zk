@@ -1,25 +1,15 @@
 spring-boot-zk
 ==============
 
-POC of Spring Boot and ZKoss and Spring Security with custom Login screen.
+Exploring the ZKoss and Spring Security with custom Login screen using Spring Boot.
 
-After checkout, just execute :
+To execute using maven:
 
 ```
 mvn spring-boot:run
 ```
 
-Or simply :
-
-```
-git clone https://github.com/juminrubin/spring-boot-zk.git
-cd spring-boot-zk/
-mvn mvn spring-boot:run
-firefox http://localhost:8080/
-# Enjoy ;-D
-```
-
-and go to http://localhost:8080/ 
+Per default, the Web Application Server would run on port number 8080. Thus, navigate to http://localhost:8080/ with your local web browser.
 
 The spring security authentication with custom login.zul and LoginController.java. Sample authorization - user / organization / pw:   ```user / org / pass1234```
 
